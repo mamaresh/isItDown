@@ -11,7 +11,21 @@ export default function Home() {
           height="200" 
           frameBorder="0">
         </iframe>
-        
+        <iframe src="https://stats.redfintest.com/grafana/d-solo/000000648/ops-test-uptime?orgId=2&from=1626040021692&to=1626126421692&panelId=1" 
+          width="450" 
+          height="200" 
+          frameborder="0">
+        </iframe>
+        <iframe src="https://stats.redfintest.com/grafana/d-solo/000000648/ops-test-uptime?orgId=2&from=1626039931877&to=1626126331877&panelId=15" 
+          width="450" 
+          height="200" 
+          frameborder="0">
+        </iframe>
+        <iframe src="https://stats.redfintest.com/grafana/d-solo/000000648/ops-test-uptime?orgId=2&from=1626040050054&to=1626126450054&panelId=10" 
+          width="450" 
+          height="200" 
+          frameborder="0">
+        </iframe>
       </main>
 
       <style jsx>{`
