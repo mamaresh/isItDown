@@ -19,7 +19,7 @@ export default function StatusList({ environment }) {
         <ul>
             {Object.entries(HEALTH_CHECKS).map(([name, getUrl]) => {
                 return (
-                    <li>
+                    <li key={`${environment}__${name}`}>
                         <Status name={name} url={getUrl(environment)} />
                     </li>
                 );
