@@ -3,8 +3,8 @@ export default function Home() {
     return (
         <div className="container">
     	<main>
-        <h1 className="title">
-          Prod status page
+		<h1 className="title">
+          newschema status page
         </h1>
         <iframe src="https://stats.redfintest.com/grafana/d-solo/000000648/ops-test-uptime?orgId=2&from=1626030115105&to=1626116515105&panelId=4" 
           width="450" 

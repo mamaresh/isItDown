@@ -19,6 +19,11 @@ export default function Home() {
             <p>Is trunk down or not?</p>
           </a>
 
+          <a href="/newschema" className="card">
+            <h3>Newschema &rarr;</h3>
+            <p>Is newschema down or not?</p>
+          </a>
+
           <a href="/release" className="card">
             <h3>Release &rarr;</h3>
             <p>Is release down or not?</p>
