@@ -26,6 +26,16 @@ export default function Home() {
           height="200" 
           frameborder="0">
         </iframe>
+        <iframe src="https://stats.redfintest.com/grafana/d-solo/000000648/ops-test-uptime?orgId=2&from=1626040293887&to=1626126693887&panelId=16" 
+          width="450" 
+          height="200" 
+          frameborder="0">
+        </iframe>
+        <iframe src="https://stats.redfintest.com/grafana/d-solo/000000648/ops-test-uptime?orgId=2&from=1626040306405&to=1626126706405&panelId=13" 
+          width="450" 
+          height="200" 
+          frameborder="0">
+        </iframe>
       </main>
 
       <style jsx>{`
