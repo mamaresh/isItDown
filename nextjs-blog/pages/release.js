@@ -4,11 +4,12 @@ export default function Home() {
         <div className="container">
     	<main>
         <title>Put all release graphs here</title>
-        <iframe src="https://stats.redfintest.com/grafana/d-solo/000000648/ops-test-uptime?orgId=2&from=1626030115105&to=1626116515105&panelId=4" 
-          width="450" 
-          height="200" 
-          frameBorder="0">
-        </iframe>
+        <iframe src="https://stats.redfintest.com/grafana/d-solo/000000648/ops-test-uptime?orgId=2&from=1626040812694&to=1626127212695&panelId=17" width="450" height="200" frameborder="0"></iframe>
+        <iframe src="https://stats.redfintest.com/grafana/d-solo/000000648/ops-test-uptime?orgId=2&from=1626040832231&to=1626127232231&panelId=12" width="450" height="200" frameborder="0"></iframe>
+        <iframe src="https://stats.redfintest.com/grafana/d-solo/000000648/ops-test-uptime?orgId=2&from=1626040843631&to=1626127243631&panelId=18" width="450" height="200" frameborder="0"></iframe>
+        <iframe src="https://stats.redfintest.com/grafana/d-solo/000000648/ops-test-uptime?orgId=2&from=1626040855560&to=1626127255560&panelId=2" width="450" height="200" frameborder="0"></iframe>
+        <iframe src="https://stats.redfintest.com/grafana/d-solo/000000648/ops-test-uptime?orgId=2&from=1626040870045&to=1626127270045&panelId=20" width="450" height="200" frameborder="0"></iframe>
+        <iframe src="https://stats.redfintest.com/grafana/d-solo/000000648/ops-test-uptime?orgId=2&from=1626040880254&to=1626127280254&panelId=14" width="450" height="200" frameborder="0"></iframe>
         
       </main>
 
