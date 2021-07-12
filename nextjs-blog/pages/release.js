@@ -3,7 +3,9 @@ export default function Home() {
     return (
         <div className="container">
     	<main>
-        <title>Put all release graphs here</title>
+        <h1 className="title">
+          release status page
+        </h1>
         <iframe src="https://stats.redfintest.com/grafana/d-solo/000000648/ops-test-uptime?orgId=2&from=1626040812694&to=1626127212695&panelId=17" width="450" height="200" frameborder="0"></iframe>
         <iframe src="https://stats.redfintest.com/grafana/d-solo/000000648/ops-test-uptime?orgId=2&from=1626040832231&to=1626127232231&panelId=12" width="450" height="200" frameborder="0"></iframe>
         <iframe src="https://stats.redfintest.com/grafana/d-solo/000000648/ops-test-uptime?orgId=2&from=1626040843631&to=1626127243631&panelId=18" width="450" height="200" frameborder="0"></iframe>
