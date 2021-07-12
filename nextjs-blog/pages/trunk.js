@@ -1,34 +1,16 @@
-import Head from 'next/head'
 
 export default function Home() {
-  return (
-    <div className="container">
-      <Head>
-        <title>isItDown</title>
-        <link rel="icon" href="/favicon.ico" />
-      </Head>
-
-      <main>
-        <h1 className="title">
-          I love Jared
+    return (
+        <div className="container">
+    	<main>
+		<h1 className="title">
+          trunk status page
         </h1>
-
-        <div className="grid">
-          <a href="/trunk" className="card">
-            <h3>Trunk &rarr;</h3>
-            <p>Is trunk down or not?</p>
-          </a>
-
-          <a href="/release" className="card">
-            <h3>Release &rarr;</h3>
-            <p>Is release down or not?</p>
-          </a>
-
-          <a href="/prod" className="card">
-            <h3>Prod &rarr;</h3>
-            <p>Is prod down or not?</p>
-          </a>
-        </div>
+        <iframe src="https://stats.redfintest.com/grafana/d-solo/000000648/ops-test-uptime?orgId=2&from=1626030115105&to=1626116515105&panelId=4" 
+          width="450" 
+          height="200" 
+          frameBorder="0">
+        </iframe>
         
       </main>
 
@@ -178,5 +160,5 @@ export default function Home() {
         }
       `}</style>
     </div>
-  )
+    )
 }
