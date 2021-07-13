@@ -1,7 +1,9 @@
 import StatusList from '../components/StatusList';
 import Environments from '../constants/Environments';
 import { Container, Row, Col } from 'react-grid-system';
-import ActionStatus from '../components/ActionStatus';;
+import ActionStatus from '../components/ActionStatus';
+import InputGroup from 'react-bootstrap/InputGroup';
+import FormControl from 'react-bootstrap/FormControl';
 
 export default function Home() {
 
@@ -44,6 +46,9 @@ export default function Home() {
             </Col>
             <Col sm={3}>
               <ActionStatus />
+              <InputGroup>
+                <FormControl as="textarea" aria-label="With textarea" />
+              </InputGroup>
             </Col>
           </Row>
           <Row>
