@@ -2,6 +2,12 @@ import StatusList from '../components/StatusList';
 import Environments from '../constants/Environments';
 
 export default function Home() {
+
+    const upOrDownData = <tr>
+                             <td></td>
+                             <td>Maria Anders</td>
+                             <td>Germany</td>
+                           </tr>
     return (
         <div className="container">
     	<main>
