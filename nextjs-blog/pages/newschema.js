@@ -1,3 +1,4 @@
+import { Container, Row, Col } from 'react-grid-system';
 
 export default function Home() {
     return (
@@ -6,10 +7,43 @@ export default function Home() {
 		    <h1 className="title">
           newschema status page
         </h1>
-        <iframe src="https://stats.redfintest.com/grafana/d-solo/000000648/ops-test-uptime?orgId=2&from=1626112161763&to=1626198561763&panelId=21" width="450" height="200" frameborder="0"></iframe>
-        <iframe src="https://stats.redfintest.com/grafana/d-solo/000000648/ops-test-uptime?orgId=2&from=1626112173569&to=1626198573570&panelId=11" width="450" height="200" frameborder="0"></iframe>
-        <iframe src="https://stats.redfintest.com/grafana/d-solo/000000648/ops-test-uptime?orgId=2&from=1626112185612&to=1626198585612&panelId=22" width="450" height="200" frameborder="0"></iframe>
-        <iframe src="https://stats.redfintest.com/grafana/d-solo/000000648/ops-test-uptime?orgId=2&from=1626112198562&to=1626198598562&panelId=3" width="450" height="200" frameborder="0"></iframe>
+        <Container>
+          <Row>
+            <Col sm={3}>
+              Services
+            </Col>
+            <Col sm={6}>
+              Graphs
+            </Col>
+            <Col sm={3}>
+              Status
+            </Col>
+          </Row>
+          <Row>
+            <Col sm={3}>
+              Stingray
+            </Col>
+            <Col sm={6}>
+              <iframe src="https://stats.redfintest.com/grafana/d-solo/000000648/ops-test-uptime?orgId=2&from=1626112161763&to=1626198561763&panelId=21" width="450" height="200" frameborder="0"></iframe>
+              <iframe src="https://stats.redfintest.com/grafana/d-solo/000000648/ops-test-uptime?orgId=2&from=1626112173569&to=1626198573570&panelId=11" width="450" height="200" frameborder="0"></iframe>
+            </Col>
+            <Col sm={3}>
+              Status
+            </Col>
+          </Row>
+          <Row>
+            <Col sm={3}>
+              Agent Tools
+            </Col>
+            <Col sm={6}>
+              <iframe src="https://stats.redfintest.com/grafana/d-solo/000000648/ops-test-uptime?orgId=2&from=1626112185612&to=1626198585612&panelId=22" width="450" height="200" frameborder="0"></iframe>
+              <iframe src="https://stats.redfintest.com/grafana/d-solo/000000648/ops-test-uptime?orgId=2&from=1626112198562&to=1626198598562&panelId=3" width="450" height="200" frameborder="0"></iframe>
+            </Col>
+            <Col sm={3}>
+              Status
+            </Col>
+          </Row>
+        </Container>
       </main>
 
       <style jsx>{`

@@ -1,3 +1,4 @@
+import { Container, Row, Col } from 'react-grid-system';
 
 export default function Home() {
     return (
@@ -6,13 +7,55 @@ export default function Home() {
         <h1 className="title">
           release status page
         </h1>
-        <iframe src="https://stats.redfintest.com/grafana/d-solo/000000648/ops-test-uptime?orgId=2&from=1626040812694&to=1626127212695&panelId=17" width="450" height="200" frameborder="0"></iframe>
-        <iframe src="https://stats.redfintest.com/grafana/d-solo/000000648/ops-test-uptime?orgId=2&from=1626040832231&to=1626127232231&panelId=12" width="450" height="200" frameborder="0"></iframe>
-        <iframe src="https://stats.redfintest.com/grafana/d-solo/000000648/ops-test-uptime?orgId=2&from=1626040843631&to=1626127243631&panelId=18" width="450" height="200" frameborder="0"></iframe>
-        <iframe src="https://stats.redfintest.com/grafana/d-solo/000000648/ops-test-uptime?orgId=2&from=1626040855560&to=1626127255560&panelId=2" width="450" height="200" frameborder="0"></iframe>
-        <iframe src="https://stats.redfintest.com/grafana/d-solo/000000648/ops-test-uptime?orgId=2&from=1626040870045&to=1626127270045&panelId=20" width="450" height="200" frameborder="0"></iframe>
-        <iframe src="https://stats.redfintest.com/grafana/d-solo/000000648/ops-test-uptime?orgId=2&from=1626040880254&to=1626127280254&panelId=14" width="450" height="200" frameborder="0"></iframe>
-        
+        <Container>
+          <Row>
+            <Col sm={3}>
+              Services
+            </Col>
+            <Col sm={6}>
+              Graphs
+            </Col>
+            <Col sm={3}>
+              Status
+            </Col>
+          </Row>
+          <Row>
+            <Col sm={3}>
+              Stingray
+            </Col>
+            <Col sm={6}>
+              <iframe src="https://stats.redfintest.com/grafana/d-solo/000000648/ops-test-uptime?orgId=2&from=1626040812694&to=1626127212695&panelId=17" width="450" height="200" frameborder="0"></iframe>
+              <iframe src="https://stats.redfintest.com/grafana/d-solo/000000648/ops-test-uptime?orgId=2&from=1626040832231&to=1626127232231&panelId=12" width="450" height="200" frameborder="0"></iframe>
+            </Col>
+            <Col sm={3}>
+              Status
+            </Col>
+          </Row>
+          <Row>
+            <Col sm={3}>
+              Agent Tools
+            </Col>
+            <Col sm={6}>
+              <iframe src="https://stats.redfintest.com/grafana/d-solo/000000648/ops-test-uptime?orgId=2&from=1626040843631&to=1626127243631&panelId=18" width="450" height="200" frameborder="0"></iframe>
+              <iframe src="https://stats.redfintest.com/grafana/d-solo/000000648/ops-test-uptime?orgId=2&from=1626040855560&to=1626127255560&panelId=2" width="450" height="200" frameborder="0"></iframe>
+            </Col>
+            <Col sm={3}>
+              Status
+            </Col>
+          </Row>
+          <Row>
+            <Col sm={3}>
+              Mortgage
+            </Col>
+            <Col sm={6}>
+              <iframe src="https://stats.redfintest.com/grafana/d-solo/000000648/ops-test-uptime?orgId=2&from=1626040870045&to=1626127270045&panelId=20" width="450" height="200" frameborder="0"></iframe>
+              <iframe src="https://stats.redfintest.com/grafana/d-solo/000000648/ops-test-uptime?orgId=2&from=1626040880254&to=1626127280254&panelId=14" width="450" height="200" frameborder="0"></iframe>
+            </Col>
+            <Col sm={3}>
+              Status
+            </Col>
+          </Row>
+        </Container>
       </main>
 
       <style jsx>{`
