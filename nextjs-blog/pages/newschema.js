@@ -3,15 +3,13 @@ export default function Home() {
     return (
         <div className="container">
     	<main>
-		<h1 className="title">
+		    <h1 className="title">
           newschema status page
         </h1>
-        <iframe src="https://stats.redfintest.com/grafana/d-solo/000000648/ops-test-uptime?orgId=2&from=1626030115105&to=1626116515105&panelId=4" 
-          width="450" 
-          height="200" 
-          frameBorder="0">
-        </iframe>
-        
+        <iframe src="https://stats.redfintest.com/grafana/d-solo/000000648/ops-test-uptime?orgId=2&from=1626112161763&to=1626198561763&panelId=21" width="450" height="200" frameborder="0"></iframe>
+        <iframe src="https://stats.redfintest.com/grafana/d-solo/000000648/ops-test-uptime?orgId=2&from=1626112173569&to=1626198573570&panelId=11" width="450" height="200" frameborder="0"></iframe>
+        <iframe src="https://stats.redfintest.com/grafana/d-solo/000000648/ops-test-uptime?orgId=2&from=1626112185612&to=1626198585612&panelId=22" width="450" height="200" frameborder="0"></iframe>
+        <iframe src="https://stats.redfintest.com/grafana/d-solo/000000648/ops-test-uptime?orgId=2&from=1626112198562&to=1626198598562&panelId=3" width="450" height="200" frameborder="0"></iframe>
       </main>
 
       <style jsx>{`
