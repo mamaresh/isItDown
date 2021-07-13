@@ -10,13 +10,13 @@ export default function Home() {
         <Container>
           <Row>
             <Col sm={3}>
-              Services
+              <h3>Services</h3>
             </Col>
             <Col sm={6}>
-              Graphs
+              <h3>Graphs</h3>
             </Col>
             <Col sm={3}>
-              Status
+              <h3>Status</h3>
             </Col>
           </Row>
           <Row>
