@@ -2,6 +2,8 @@ import StatusList from '../components/StatusList';
 import Environments from '../constants/Environments';
 import { Container, Row, Col } from 'react-grid-system';
 import ActionStatus from '../components/ActionStatus';;
+import ServiceStatus from '../components/ServiceStatus';
+import React from 'react';
 
 export default function Home() {
 
@@ -14,6 +16,7 @@ export default function Home() {
         <StatusList
           environment={Environments.TRUNK}
         />
+        <ServiceStatus />
         <Container>
           <Row>
             <Col sm={3}>
