@@ -4,11 +4,6 @@ import { Container, Row, Col } from 'react-grid-system';
 
 export default function Home() {
 
-    const upOrDownData = <tr>
-                             <td></td>
-                             <td>Maria Anders</td>
-                             <td>Germany</td>
-                           </tr>
     return (
         <div className="container">
     	<main>
@@ -30,26 +25,7 @@ export default function Home() {
               <h3>Status</h3>
             </Col>
           </Row>
-          <Row>
-            <Col sm={3}>
-              Stingray
-            </Col>
-            <Col sm={6}>
-            <iframe src="https://stats.redfintest.com/grafana/d-solo/000000648/ops-test-uptime?orgId=2&from=1626030115105&to=1626116515105&panelId=4"
-              width="450"
-              height="200"
-              frameBorder="0">
-            </iframe>
-            <iframe src="https://stats.redfintest.com/grafana/d-solo/000000648/ops-test-uptime?orgId=2&from=1626040021692&to=1626126421692&panelId=1"
-              width="450"
-              height="200"
-              frameborder="0">
-            </iframe>
-            </Col>
-            <Col sm={3}>
-              Status
-            </Col>
-          </Row>
+
           <Row>
             <Col sm={3}>
               Agent Tools
