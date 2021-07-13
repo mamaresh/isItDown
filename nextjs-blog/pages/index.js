@@ -1,6 +1,69 @@
 import Head from 'next/head'
+import { FcCheckmark } from 'react-icons/fc';
+import { FcHighPriority } from 'react-icons/fc';
 
-export default function Home() {
+export default function Home(props) {
+    // TODO: update default value
+    const {isTrunkHealthy = true, trunkRevisionCommit = "12345"} = props;
+    const trunkRevisionLink = "https://stash.redfin.com/projects/RED/repos/main/commits/" + trunkRevisionCommit;
+
+    // TODO: update data structure when necessary
+    const envData = {
+        Trunk: {
+            url: '/trunk',
+            health: isTrunkHealthy,
+            commit: trunkRevisionCommit,
+            link: trunkRevisionLink,
+        },
+        Release: {url: '/release', health: false, commit: "12345"},
+        Newschema: {url: '/newschema', health: false, commit: "12345"},
+        Prod: {url: '/prod', health: false, commit: "12345"},
+    }
+
+    const  envCards = Object.keys(envData).map(key => {
+        return(
+            <div className="card">
+                <a href={envData[key].url}><h3> {key} &rarr;</h3></a>
+                <p>Health: {envData[key].health ?  <FcCheckmark /> : <FcHighPriority />}</p>
+                <p>Revision:
+                    <a href={envData[key].link}>
+                        {envData[key].commit}
+                    </a>
+                </p>
+                 <style jsx>{`.card {
+                          margin: 1rem;
+                          flex-basis: 45%;
+                          padding: 1.5rem;
+                          text-align: left;
+                          color: inherit;
+                          text-decoration: none;
+                          border: 1px solid #eaeaea;
+                          border-radius: 10px;
+                          transition: color 0.15s ease, border-color 0.15s ease;
+                        }
+
+                        .card:hover,
+                        .card:focus,
+                        .card:active {
+                          color: #0070f3;
+                          border-color: #0070f3;
+                        }
+
+                        .card h3 {
+                          margin: 0 0 1rem 0;
+                          font-size: 1.5rem;
+                        }
+
+                        .card p {
+                          margin: 0;
+                          font-size: 1.25rem;
+                          line-height: 1.5;
+                        }
+                 `}</style>
+
+            </div>
+        )
+    })
   return (
     <div className="container">
       <Head>
@@ -12,24 +75,9 @@ export default function Home() {
         <h1 className="title">
           I love Jared
         </h1>
-
         <div className="grid">
-          <a href="/trunk" className="card">
-            <h3>Trunk &rarr;</h3>
-            <p>Is trunk down or not?</p>
-          </a>
-
-          <a href="/release" className="card">
-            <h3>Release &rarr;</h3>
-            <p>Is release down or not?</p>
-          </a>
-
-          <a href="/prod" className="card">
-            <h3>Prod &rarr;</h3>
-            <p>Is prod down or not?</p>
-          </a>
+         {envCards}
         </div>
-        
       </main>
 
       <style jsx>{`
@@ -119,36 +167,6 @@ export default function Home() {
 
           max-width: 800px;
           margin-top: 3rem;
-        }
-
-        .card {
-          margin: 1rem;
-          flex-basis: 45%;
-          padding: 1.5rem;
-          text-align: left;
-          color: inherit;
-          text-decoration: none;
-          border: 1px solid #eaeaea;
-          border-radius: 10px;
-          transition: color 0.15s ease, border-color 0.15s ease;
-        }
-
-        .card:hover,
-        .card:focus,
-        .card:active {
-          color: #0070f3;
-          border-color: #0070f3;
-        }
-
-        .card h3 {
-          margin: 0 0 1rem 0;
-          font-size: 1.5rem;
-        }
-
-        .card p {
-          margin: 0;
-          font-size: 1.25rem;
-          line-height: 1.5;
         }
 
         .logo {
