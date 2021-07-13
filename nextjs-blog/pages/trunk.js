@@ -1,6 +1,7 @@
 import StatusList from '../components/StatusList';
 import Environments from '../constants/Environments';
 import { Container, Row, Col } from 'react-grid-system';
+import ActionStatus from '../components/ActionStatus';;
 
 export default function Home() {
 
@@ -42,7 +43,7 @@ export default function Home() {
             </iframe>
             </Col>
             <Col sm={3}>
-              Status
+              <ActionStatus />
             </Col>
           </Row>
           <Row>
