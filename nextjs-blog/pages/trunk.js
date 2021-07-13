@@ -3,6 +3,7 @@ import Environments from '../constants/Environments';
 import { Container, Row, Col } from 'react-grid-system';
 
 export default function Home() {
+
     return (
         <div className="container">
     	<main>

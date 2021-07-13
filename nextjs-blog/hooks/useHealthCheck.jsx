@@ -1,10 +1,5 @@
 import { useState, useEffect } from 'react';
-
-const HEALTH = {
-    LOADING: 'LOADING',
-    UP: 'UP',
-    DOWN: 'DOWN',
-};
+import HEALTH from '../constants/Health';
 
 export default function useHealthCheck(url, interval = 60000) {
     const [health, setHealth] = useState(HEALTH.LOADING);
