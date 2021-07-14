@@ -8,13 +8,14 @@ import Description from './Description';
 const EnvInfoRow = (
     {
         descriptionPanel,
-        graphPanel
+        graphPanel,
+        environment
     }) => {
         return (
             <Container>
                 <Row>
                     <Col sm={8}>
-                      {descriptionPanel ? <GrafanaGraphs descriptionPanel={descriptionPanel} graphPanel={graphPanel}/> : <Description />}
+                      {descriptionPanel ? <GrafanaGraphs descriptionPanel={descriptionPanel} graphPanel={graphPanel} environment = {environment}/> : <Description />}
                     </Col>
                     <Col sm={4}>
                       <ActionStatus />
