@@ -1,6 +1,7 @@
 import React from 'react';
 import {Row, Col } from 'react-grid-system';
 import ActionStatus from './ActionStatus';
+import TextArea from './TextArea';
 import Status from './Status';
 import InputGroup from 'react-bootstrap/InputGroup';
 import FormControl from 'react-bootstrap/FormControl';
@@ -35,9 +36,7 @@ const EnvInfoRow = (
                 </Col>
                 <Col sm={3}>
                   <ActionStatus />
-                  <InputGroup>
-                    <FormControl as="textarea" aria-label="With textarea" />
-                  </InputGroup>
+                  <TextArea />
                 </Col>
           </Row>
     )
