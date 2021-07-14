@@ -15,6 +15,16 @@ const EnvInfoRow = (
                 <Row>
                     <Col sm={8}>
                       {descriptionPanel ? <GrafanaGraphs descriptionPanel={descriptionPanel} graphPanel={graphPanel}/> : <Description />}
+                        <iframe src={GRAFANA_DASHBOARD_PREFIX + descriptionPanel}
+                          width="450"
+                          height="200"
+                          frameBorder="0">
+                        </iframe>
+                        <iframe src={GRAFANA_DASHBOARD_PREFIX + graphPanel}
+                          width="450"
+                          height="200"
+                          frameBorder="0">
+                        </iframe>
                     </Col>
                     <Col sm={4}>
                       <ActionStatus />
