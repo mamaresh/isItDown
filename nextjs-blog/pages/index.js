@@ -42,7 +42,7 @@ export default function Home(props) {
 
       <main>
         <h1 className="title">
-          I love Jared
+          ok thanks
         </h1>
         <div className="grid">
          {envCards}
