@@ -15,7 +15,7 @@ const EnvInfoRow = (
             <Container>
                 <Row>
                     <Col sm={8}>
-                      {descriptionPanel ? <GrafanaGraphs descriptionPanel={descriptionPanel} graphPanel={graphPanel} environment = {environment}/> : <Description />}
+                      {descriptionPanel[environment] ? <GrafanaGraphs descriptionPanel={descriptionPanel} graphPanel={graphPanel} environment = {environment}/> : <Description />}
                     </Col>
                     <Col sm={4}>
                       <ActionStatus />
