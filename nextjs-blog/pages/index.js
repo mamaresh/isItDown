@@ -43,11 +43,6 @@ export default function Home(props) {
             <div className="card">
                 <a href={envData[key].url}><h3> {key} &rarr;</h3></a>
                 <p>Health: {healthIcon}</p>
-                <p>Revision:
-                    <a href={envData[key].link}>
-                        {envData[key].commit}
-                    </a>
-                </p>
                 {/*<p>Revision:*/}
                 {/*    <a href={envData[key].link}>*/}
                 {/*        {envData[key].commit}*/}
