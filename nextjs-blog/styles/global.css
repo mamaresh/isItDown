@@ -142,4 +142,8 @@ body {
 
   .input-group{
     margin-top: 1rem;
-}
+  }
+
+  article{
+    min-height: 100px;
+  }
