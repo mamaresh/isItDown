@@ -1,6 +1,7 @@
 import Head from 'next/head'
 import { FcCheckmark } from 'react-icons/fc';
 import { FcHighPriority } from 'react-icons/fc';
+import EnvironmentDistroDetails from "../components/EnvironmentDistroDetails";
 
 export default function Home(props) {
     // TODO: update default value
@@ -11,13 +12,14 @@ export default function Home(props) {
     const envData = {
         Trunk: {
             url: '/trunk',
+            env: 'trunk',
             health: isTrunkHealthy,
             commit: trunkRevisionCommit,
             link: trunkRevisionLink,
         },
-        Release: {url: '/release', health: false, commit: "12345"},
-        Newschema: {url: '/newschema', health: false, commit: "12345"},
-        Prod: {url: '/prod', health: false, commit: "12345"},
+        Release: {url: '/release', env: 'release', health: false, commit: "12345"},
+        Newschema: {url: '/newschema', env: 'newschema', health: false, commit: "12345"},
+        Prod: {url: '/prod', env: 'trunk', health: false, commit: "12345"},
     }
 
     const  envCards = Object.keys(envData).map(key => {
@@ -25,11 +27,12 @@ export default function Home(props) {
             <div className="card">
                 <a href={envData[key].url}><h3> {key} &rarr;</h3></a>
                 <p>Health: {envData[key].health ?  <FcCheckmark /> : <FcHighPriority />}</p>
-                <p>Revision:
-                    <a href={envData[key].link}>
-                        {envData[key].commit}
-                    </a>
-                </p>
+                {/*<p>Revision:*/}
+                {/*    <a href={envData[key].link}>*/}
+                {/*        {envData[key].commit}*/}
+                {/*    </a>*/}
+                {/*</p>*/}
+              <EnvironmentDistroDetails env={envData[key].env}/>
             </div>
         )
     })
