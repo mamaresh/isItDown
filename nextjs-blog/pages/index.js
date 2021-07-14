@@ -1,8 +1,8 @@
 import Head from 'next/head'
-import { FcCheckmark } from 'react-icons/fc';
-import { FcHighPriority, FcMediumPriority } from 'react-icons/fc';
+import { FcCheckmark, FcHighPriority, FcMediumPriority } from 'react-icons/fc';
 import HEALTH from '../constants/Health';
 import { VscLoading } from 'react-icons/vsc';
+import EnvironmentDistroDetails from "../components/EnvironmentDistroDetails";
 
 export default function Home(props) {
     // TODO: update default value
@@ -17,9 +17,9 @@ export default function Home(props) {
             commit: trunkRevisionCommit,
             link: trunkRevisionLink,
         },
-        Release: {url: '/release', health: HEALTH.PARTIAL_DOWN, commit: "12345"},
-        Newschema: {url: '/newschema', health: HEALTH.PARTIAL_DOWN, commit: "12345"},
-        Prod: {url: '/prod', health: HEALTH.DOWN, commit: "12345"},
+        Release: {url: '/release', env: 'release', health: HEALTH.PARTIAL_DOWN, commit: "12345"},
+        Newschema: {url: '/newschema', env: 'newschema', health: HEALTH.PARTIAL_DOWN, commit: "12345"},
+        Prod: {url: '/prod', env: 'trunk', health: HEALTH.DOWN, commit: "12345"},
     }
     const size = 24;
 
@@ -48,6 +48,13 @@ export default function Home(props) {
                         {envData[key].commit}
                     </a>
                 </p>
+                <p>Health: {envData[key].health ?  <FcCheckmark /> : <FcHighPriority />}</p>
+                {/*<p>Revision:*/}
+                {/*    <a href={envData[key].link}>*/}
+                {/*        {envData[key].commit}*/}
+                {/*    </a>*/}
+                {/*</p>*/}
+              <EnvironmentDistroDetails env={envData[key].env}/>
             </div>
         )
     })
