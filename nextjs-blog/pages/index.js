@@ -48,7 +48,6 @@ export default function Home(props) {
                         {envData[key].commit}
                     </a>
                 </p>
-                <p>Health: {envData[key].health ?  <FcCheckmark /> : <FcHighPriority />}</p>
                 {/*<p>Revision:*/}
                 {/*    <a href={envData[key].link}>*/}
                 {/*        {envData[key].commit}*/}
