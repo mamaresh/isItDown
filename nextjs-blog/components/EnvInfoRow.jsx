@@ -2,6 +2,7 @@ import React from 'react';
 import { Container, Row, Col } from 'react-grid-system';
 import ActionStatus from './ActionStatus';
 import TextArea from './TextArea';
+import GrafanaGraphs from './GrafanaGraphs';
 import Description from './Description';
 
 const EnvInfoRow = ({
