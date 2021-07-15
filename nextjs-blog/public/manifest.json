@@ -9,7 +9,11 @@
         "32": "favicon.ico",
         "150": "favicon.ico"
     },
-    "permissions": [],
+    "permissions": [
+        "https://trunk.redfintest.com/*",
+        "https://release.redfintest.com/*",
+        "https://newschema.redfintest.com/*"
+    ],
     "browser_action": {
         "default_title": "Is It Down Extension"
     },
