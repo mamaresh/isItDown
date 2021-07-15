@@ -5,7 +5,7 @@ export default function parseDistroPage(env, interval = 60000) {
 
     useEffect(() => {
         function checkRevision() {
-            return fetch(`https://${env}.redfintest.com/distro.html`)
+            return fetch('/api/forwarder/'+env+'/distro.html')
               .then((response) => response.text())
               .then(text => {
                   return hackilyParseDistroHTML(text);

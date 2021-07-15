@@ -4,12 +4,16 @@ import ActionStatus from './ActionStatus';
 import TextArea from './TextArea';
 import Description from './Description';
 
-const EnvInfoRow = () => {
+const EnvInfoRow = ({
+  descriptionPanel,
+  graphPanel,
+  environment,
+}) => {
         return (
             <Container>
                 <Row>
                     <Col sm={8}>
-                      <Description />
+                      {descriptionPanel[environment] ? <GrafanaGraphs descriptionPanel={descriptionPanel} graphPanel={graphPanel} environment = {environment}/> : <Description />}
                     </Col>
                     <Col sm={4}>
                       <ActionStatus />
