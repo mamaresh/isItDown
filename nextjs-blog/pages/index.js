@@ -12,8 +12,6 @@ export default function Home() {
         Trunk: { url: '/trunk', env: Environments.TRUNK },
         Release: { url: '/release', env: Environments.RELEASE },
         Newschema: { url: '/newschema', env: Environments.NEW_SCHEMA },
-        // TODO: fix prod CORS errors or remove
-        Prod: { url: '/prod', env: Environments.TRUNK },
     });
     const size = 24;
 
