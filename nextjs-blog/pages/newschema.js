@@ -6,7 +6,7 @@ export default function Home() {
         <div className="container">
     	    <main>
 		        <h1 className="title">
-                    newschema status page
+                    Newschema Status
                 </h1>
                 <EnvInfoRowList environment = {Environments.NEW_SCHEMA} />
             </main>

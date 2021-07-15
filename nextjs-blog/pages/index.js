@@ -25,29 +25,30 @@ export default function Home(props) {
 
     const  envCards = Object.keys(envData).map(key => {
       const health = envData[key].health;
-      let healthIcon;
+      let healthIcon, cardClassName;
       switch (health) {
         case HEALTH.UP:
-          healthIcon = <FcCheckmark size={size}/>;
-          break;
+            cardClassName = "green";
+            healthIcon = <FcCheckmark size={size}/>;
+            break;
         case HEALTH.PARTIAL_DOWN:
-          healthIcon = <FcMediumPriority size={size} />;
-          break;
+            healthIcon = <FcMediumPriority size={size} />;
+            cardClassName = "yellow";
+            break;
         case HEALTH.DOWN:
-          healthIcon = <FcHighPriority size={size} />;
-          break;
+            healthIcon = <FcHighPriority size={size} />;
+            cardClassName = "red";
+            break;
         default:
-          healthIcon = <VscLoading size={size} />;
-      }
+            healthIcon = <VscLoading size={size} />;
+            cardClassName = "";
+    }
+    cardClassName += " card environments";
+    
         return(
-            <div className="card">
-                <a href={envData[key].url}><h3> {key} &rarr;</h3></a>
+            <div className={cardClassName}>
+                <a href={envData[key].url}><h3 className= "environmentName"> {key} &rarr;</h3></a>
                 <p>Health: {healthIcon}</p>
-                {/*<p>Revision:*/}
-                {/*    <a href={envData[key].link}>*/}
-                {/*        {envData[key].commit}*/}
-                {/*    </a>*/}
-                {/*</p>*/}
               <EnvironmentDistroDetails env={envData[key].env}/>
             </div>
         )
@@ -61,7 +62,7 @@ export default function Home(props) {
 
       <main>
         <h1 className="title">
-          ok thanks
+          Status
         </h1>
         <div className="grid">
          {envCards}

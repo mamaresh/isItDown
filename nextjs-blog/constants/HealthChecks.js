@@ -30,9 +30,9 @@ const HEALTH_CHECKS = {
     'Stingray':{
         getUrl: (env) => `${API_PREFIX}/${env}/stingray/do/system-status`,
         descriptionPanel: {
-            trunk: 4,
-            release: 17,
-            newschema: 21
+            trunk: 23,
+            release: 26,
+            newschema: 29
         },
         graphPanel: {
             trunk: 1,
@@ -43,9 +43,9 @@ const HEALTH_CHECKS = {
     'Commerce': {
         getUrl: (env) => `${API_PREFIX}/${env}/tools/system-status`,
         descriptionPanel: {
-            trunk: 15,
-            release: 18,
-            newschema: 22
+            trunk: 24,
+            release: 27,
+            newschema: 30
         },
         graphPanel: {
             trunk: 10,
@@ -69,8 +69,8 @@ const HEALTH_CHECKS = {
     'MWS': {
         getUrl: (env) => `${API_PREFIX}/${env}/mortgage-api/system-status`,
         descriptionPanel: {
-            trunk: 16,
-            release: 20,
+            trunk: 25,
+            release: 28,
             newschema: 0
         },
         graphPanel: {

@@ -6,7 +6,7 @@ export default function Home() {
         <div className="container">
     	    <main>
                 <h1 className="title">
-                    release status page
+                    Release Status
                 </h1>
                 <EnvInfoRowList environment = {Environments.RELEASE} />
             </main>

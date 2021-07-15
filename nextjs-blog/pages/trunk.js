@@ -6,7 +6,7 @@ export default function Home() {
         <div className="container">
     	    <main>
                 <h1 className="title">
-                  trunk status page
+                  Trunk Status
                 </h1>
                 <EnvInfoRowList environment = {Environments.TRUNK} />
             </main>

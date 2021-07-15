@@ -1,6 +1,6 @@
 import React from 'react';
 
-const GRAFANA_DASHBOARD_PREFIX = "https://stats.redfintest.com/grafana/d-solo/000000648/ops-test-uptime?orgId=2&panelId=";
+const GRAFANA_DASHBOARD_PREFIX = "https://stats.redfintest.com/grafana/d-solo/000000648/ops-test-uptime?orgId=2&theme=light&panelId=";
 
 export default function GrafanaGraphs({
     descriptionPanel,

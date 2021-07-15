@@ -2,9 +2,8 @@ html,
 body {
     padding: 0;
     margin: 0;
-    font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto,
-      Oxygen, Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue,
-      sans-serif;
+
+    font-family: "proxima-nova", "Helvetica Neue", Helvetica, Arial, Sans-Serif;
 }
 
 * {
@@ -146,4 +145,47 @@ body {
 
   article{
     min-height: 100px;
+  }
+
+  .card{
+    border-radius: 3px !important;
+    padding: 1rem;
+    border: 1px solid #b2b2b2 !important;
+  }
+
+  .yellow{
+    border: 1px solid #f1c40f !important;
+  }
+
+  .green{
+    border: 1px solid #2fcc66 !important;
+  }
+
+  .red{
+    border: 1px solid red !important;
+  }
+
+  .serviceName{
+    font-size: 1.5rem;
+    line-height: 2rem;
+    font-weight: 500;
+  }
+
+  .environmentName{
+    font-size: 1.5rem;
+    line-height: 2rem;
+    font-weight: 500;
+  }
+
+  .card-header {
+    background-color:white !important;
+    border-bottom: 0 !important;
+  }
+
+  .title{
+    margin-bottom: 3rem;
+  }
+
+  .card.environments{
+    min-height: 160px;
   }
