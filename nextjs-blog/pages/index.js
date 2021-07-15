@@ -8,47 +8,14 @@ import useHealthCheck from '../hooks/useHealthCheck';
 import Environments from '../constants/Environments';
 
 export default function Home() {
-    const envData = {
+    const envData = addHealth({
         Trunk: { url: '/trunk', env: Environments.TRUNK },
         Release: { url: '/release', env: Environments.RELEASE },
         Newschema: { url: '/newschema', env: Environments.NEW_SCHEMA },
         // TODO: fix prod CORS errors or remove
         Prod: { url: '/prod', env: Environments.TRUNK },
-    };
-    const size = 24;
-
-    Object.entries(envData).forEach(([key, { env }]) => {
-        const serviceHealth = Object.entries(HEALTH_CHECKS).map(([, { getUrl }]) => {
-            const url = getUrl(env);
-            const { health } = useHealthCheck(url);
-            return health;
-        });
-
-        function makeHealthChecker(expectedHealth) {
-            return (health) => health === expectedHealth;
-        }
-
-        envData[key].health = (() => {
-            const loading = serviceHealth.some(makeHealthChecker(HEALTH.LOADING));
-            if (loading) {
-                return HEALTH.LOADING;
-            }
-
-            const allServicesDown = serviceHealth.every(
-                makeHealthChecker(HEALTH.DOWN));
-            if (allServicesDown) {
-                return HEALTH.DOWN;
-            }
-
-            const allServicesUp = serviceHealth.every(
-                makeHealthChecker(HEALTH.UP));
-            if (allServicesUp) {
-                return HEALTH.UP;
-            }
-
-            return HEALTH.PARTIAL_DOWN;
-        })();
     });
+    const size = 24;
 
     const  envCards = Object.keys(envData).map(key => {
       const health = envData[key].health;
@@ -96,4 +63,43 @@ export default function Home() {
       </main>
     </div>
   )
+}
+
+function addHealth(envData) {
+  const envDataCopy = envData;
+  Object.entries(envDataCopy).forEach(([key, { env }]) => {
+    envDataCopy[key].health = getHealth(env);
+  });
+  return envDataCopy;
+}
+
+function getHealth(env) {
+  const serviceHealth = Object.entries(HEALTH_CHECKS).map(([, { getUrl }]) => {
+    const url = getUrl(env);
+    const { health } = useHealthCheck(url);
+    return health;
+  });
+
+  function makeHealthChecker(expectedHealth) {
+    return (health) => health === expectedHealth;
+  }
+
+  const loading = serviceHealth.some(makeHealthChecker(HEALTH.LOADING));
+  if (loading) {
+    return HEALTH.LOADING;
+  }
+
+  const allServicesDown = serviceHealth.every(
+    makeHealthChecker(HEALTH.DOWN));
+  if (allServicesDown) {
+    return HEALTH.DOWN;
+  }
+
+  const allServicesUp = serviceHealth.every(
+    makeHealthChecker(HEALTH.UP));
+  if (allServicesUp) {
+    return HEALTH.UP;
+  }
+
+  return HEALTH.PARTIAL_DOWN;
 }
