@@ -2,7 +2,7 @@ const API_PREFIX = '/api/forwarder';
 // Grabbed from https://redfin.atlassian.net/wiki/spaces/OPS/pages/583377711/Redfin+Service+Health+Checks
 const HEALTH_CHECKS = {
     'Customer site': {
-        getUrl: (env) => `${API_PREFIX}/${env}`,
+        getUrl: (env) => `https://${env}.redfintest.com`,
         descriptionPanel: {
             trunk: 0,
             release: 0,
@@ -15,7 +15,7 @@ const HEALTH_CHECKS = {
         },
     },
     'Corvair': {
-        getUrl: (env) => `${API_PREFIX}/${env}/r3s/system-status`,
+        getUrl: (env) => `https://${env}.redfintest.com/r3s/system-status`,
         descriptionPanel: {
             trunk: 0,
             release: 0,
@@ -28,7 +28,7 @@ const HEALTH_CHECKS = {
         },
     },
     'Stingray':{
-        getUrl: (env) => `${API_PREFIX}/${env}/stingray/do/system-status`,
+        getUrl: (env) => `https://${env}.redfintest.com/stingray/do/system-status`,
         descriptionPanel: {
             trunk: 4,
             release: 17,
@@ -41,7 +41,7 @@ const HEALTH_CHECKS = {
         },
     },
     'Commerce': {
-        getUrl: (env) => `${API_PREFIX}/${env}/tools/system-status`,
+        getUrl: (env) => `https://${env}.redfintest.com/tools/system-status`,
         descriptionPanel: {
             trunk: 15,
             release: 18,
@@ -54,7 +54,7 @@ const HEALTH_CHECKS = {
         },
     },
     'DSS': {
-        getUrl: (env) => `${API_PREFIX}/${env}/documents-api/system-status`,
+        getUrl: (env) => `https://${env}.redfintest.com/documents-api/system-status`,
         descriptionPanel: {
             trunk: 0,
             release: 0,
@@ -67,7 +67,7 @@ const HEALTH_CHECKS = {
         },
     },
     'MWS': {
-        getUrl: (env) => `${API_PREFIX}/${env}/mortgage-api/system-status`,
+        getUrl: (env) => `https://${env}.redfintest.com/mortgage-api/system-status`,
         descriptionPanel: {
             trunk: 16,
             release: 20,
@@ -80,7 +80,7 @@ const HEALTH_CHECKS = {
         },
     },
     'Title': {
-        getUrl: (env) => `${API_PREFIX}/${env}/title-api/system-status`,
+        getUrl: (env) => `https://${env}.redfintest.com/title-api/system-status`,
         descriptionPanel: {
             trunk: 0,
             release: 0,
