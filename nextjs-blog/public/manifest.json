@@ -11,7 +11,10 @@
     },
     "permissions": [],
     "browser_action": {
-        "default_title": "Is It Down Extension",
-        "default_popup": "index.html"
+        "default_title": "Is It Down Extension"
+    },
+    "background": {
+        "scripts": ["background.js"],
+        "persistent": false
     }
 }
