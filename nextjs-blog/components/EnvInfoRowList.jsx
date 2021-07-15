@@ -5,8 +5,10 @@ import EnvInfoRow from './EnvInfoRow';
 import StatusHeader from './StatusHeader';
 import HealthChecks from '../constants/HealthChecks';
 
+import styles from './EnvInfoRowList.module.css';
+
 const EnvInfoRowList = ({environment}) => (
-    <Accordion>
+    <Accordion className={styles.accordion}>
       {Object.entries(HealthChecks).map(([service, rowInfo]) => {
           const key = environment + "_" + service;
           return (
