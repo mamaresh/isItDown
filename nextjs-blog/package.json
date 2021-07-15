@@ -6,7 +6,7 @@
     "dev": "next dev",
     "build": "next build && next export",
     "start": "next start",
-    "prepare": "[ -d out ] && mv out/_next out/assets && sed -i '' -e s/\\\\/_next/\\\\/assets/g out/**.html"
+    "prepare": "./scripts/prepare.sh"
   },
   "dependencies": {
     "bootstrap": "^4.6.0",
