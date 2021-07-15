@@ -9,11 +9,11 @@ import Environments from '../constants/Environments';
 
 export default function Home() {
     const envData = addHealth({
-        Trunk: { url: '/trunk', env: Environments.TRUNK },
-        Release: { url: '/release', env: Environments.RELEASE },
-        Newschema: { url: '/newschema', env: Environments.NEW_SCHEMA },
+        Trunk: { url: '/trunk.html', env: Environments.TRUNK },
+        Release: { url: '/release.html', env: Environments.RELEASE },
+        Newschema: { url: '/newschema.html', env: Environments.NEW_SCHEMA },
         // TODO: fix prod CORS errors or remove
-        Prod: { url: '/prod', env: Environments.TRUNK },
+        Prod: { url: '/prod.html', env: Environments.TRUNK },
     });
     const size = 24;
 

@@ -2,7 +2,7 @@ const API_PREFIX = '/api/forwarder';
 // Grabbed from https://redfin.atlassian.net/wiki/spaces/OPS/pages/583377711/Redfin+Service+Health+Checks
 const HEALTH_CHECKS = {
     'Customer site': {
-        getUrl: (env) => `https://${env}.redfintest.com`,
+        getUrl: (env) => `https://${env}.redfintest.com/distro.html`,
         descriptionPanel: {
             trunk: 0,
             release: 0,
