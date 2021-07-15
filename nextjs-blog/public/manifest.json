@@ -1,0 +1,20 @@
+{
+    "manifest_version": 2,
+    "name": "Is It Down Extension",
+    "short_name": "is-it-down-extension",
+    "version": "1.0.0",
+    "description": "Is It Down Extension",
+    "icons": {
+        "16": "favicon.ico",
+        "32": "favicon.ico",
+        "150": "favicon.ico"
+    },
+    "permissions": [],
+    "browser_action": {
+        "default_title": "Is It Down Extension"
+    },
+    "background": {
+        "scripts": ["background.js"],
+        "persistent": false
+    }
+}

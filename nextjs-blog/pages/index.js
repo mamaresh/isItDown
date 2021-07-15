@@ -3,24 +3,18 @@ import { FcCheckmark, FcHighPriority, FcMediumPriority } from 'react-icons/fc';
 import HEALTH from '../constants/Health';
 import { VscLoading } from 'react-icons/vsc';
 import EnvironmentDistroDetails from "../components/EnvironmentDistroDetails";
+import HEALTH_CHECKS from '../constants/HealthChecks';
+import useHealthCheck from '../hooks/useHealthCheck';
+import Environments from '../constants/Environments';
 
-export default function Home(props) {
-    // TODO: update default value
-    const {trunkHealth = HEALTH.UP, trunkRevisionCommit = "12345"} = props;
-    const trunkRevisionLink = "https://stash.redfin.com/projects/RED/repos/main/commits/" + trunkRevisionCommit;
-
-    // TODO: update data structure when necessary
-    const envData = {
-        Trunk: {
-            url: '/trunk',
-            health: trunkHealth,
-            commit: trunkRevisionCommit,
-            link: trunkRevisionLink,
-        },
-        Release: {url: '/release', env: 'release', health: HEALTH.PARTIAL_DOWN, commit: "12345"},
-        Newschema: {url: '/newschema', env: 'newschema', health: HEALTH.PARTIAL_DOWN, commit: "12345"},
-        Prod: {url: '/prod', env: 'trunk', health: HEALTH.DOWN, commit: "12345"},
-    }
+export default function Home() {
+    const envData = addHealth({
+        Trunk: { url: '/trunk', env: Environments.TRUNK },
+        Release: { url: '/release', env: Environments.RELEASE },
+        Newschema: { url: '/newschema', env: Environments.NEW_SCHEMA },
+        // TODO: fix prod CORS errors or remove
+        Prod: { url: '/prod', env: Environments.TRUNK },
+    });
     const size = 24;
 
     const  envCards = Object.keys(envData).map(key => {
@@ -48,7 +42,7 @@ export default function Home(props) {
         return(
             <div className={cardClassName}>
                 <a href={envData[key].url}><h3 className= "environmentName"> {key} &rarr;</h3></a>
-                <p>Health: {healthIcon}</p>
+                <p className="health">Health: {healthIcon}</p>
               <EnvironmentDistroDetails env={envData[key].env}/>
             </div>
         )
@@ -70,4 +64,43 @@ export default function Home(props) {
       </main>
     </div>
   )
+}
+
+function addHealth(envData) {
+  const envDataCopy = envData;
+  Object.entries(envDataCopy).forEach(([key, { env }]) => {
+    envDataCopy[key].health = getHealth(env);
+  });
+  return envDataCopy;
+}
+
+function getHealth(env) {
+  const serviceHealth = Object.entries(HEALTH_CHECKS).map(([, { getUrl }]) => {
+    const url = getUrl(env);
+    const { health } = useHealthCheck(url);
+    return health;
+  });
+
+  function makeHealthChecker(expectedHealth) {
+    return (health) => health === expectedHealth;
+  }
+
+  const loading = serviceHealth.some(makeHealthChecker(HEALTH.LOADING));
+  if (loading) {
+    return HEALTH.LOADING;
+  }
+
+  const allServicesDown = serviceHealth.every(
+    makeHealthChecker(HEALTH.DOWN));
+  if (allServicesDown) {
+    return HEALTH.DOWN;
+  }
+
+  const allServicesUp = serviceHealth.every(
+    makeHealthChecker(HEALTH.UP));
+  if (allServicesUp) {
+    return HEALTH.UP;
+  }
+
+  return HEALTH.PARTIAL_DOWN;
 }

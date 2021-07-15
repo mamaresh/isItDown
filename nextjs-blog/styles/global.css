@@ -2,7 +2,7 @@ html,
 body {
     padding: 0;
     margin: 0;
-
+    color: #333 !important;
     font-family: "proxima-nova", "Helvetica Neue", Helvetica, Arial, Sans-Serif;
 }
 
@@ -101,7 +101,7 @@ body {
   .card {
     margin: 1rem;
     flex-basis: 45%;
-    padding: 1.5rem;
+    padding: 1.5rem !important;
     text-align: left;
     color: inherit;
     text-decoration: none;
@@ -149,7 +149,7 @@ body {
 
   .card{
     border-radius: 3px !important;
-    padding: 1rem;
+    padding: 2rem;
     border: 1px solid #b2b2b2 !important;
   }
 
@@ -171,7 +171,7 @@ body {
     font-weight: 500;
   }
 
-  .environmentName{
+  .card>a>.environmentName{
     font-size: 1.5rem;
     line-height: 2rem;
     font-weight: 500;
@@ -180,6 +180,7 @@ body {
   .card-header {
     background-color:white !important;
     border-bottom: 0 !important;
+    padding: 0 !important;
   }
 
   .title{
@@ -187,5 +188,18 @@ body {
   }
 
   .card.environments{
-    min-height: 160px;
+    min-height: 180px;
+  }
+
+  .card>.health{
+    line-height: 2rem;
+    font-size: 1.25rem;
+  }
+
+  .card>.container-fluid{
+    padding: 0;
+  }
+
+  .health>svg{
+    vertical-align: top;
   }

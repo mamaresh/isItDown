@@ -4,8 +4,9 @@
   "private": true,
   "scripts": {
     "dev": "next dev",
-    "build": "next build",
-    "start": "next start"
+    "build": "next build && next export",
+    "start": "next start",
+    "prepare": "mv out/_next out/assets && sed -i 's/\\/_next/\\/assets/g' out/**.html"
   },
   "dependencies": {
     "bootstrap": "^4.6.0",
