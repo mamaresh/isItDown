@@ -6,8 +6,11 @@ import EnvironmentDistroDetails from "../components/EnvironmentDistroDetails";
 import HEALTH_CHECKS from '../constants/HealthChecks';
 import useHealthCheck from '../hooks/useHealthCheck';
 import Environments from '../constants/Environments';
+import Alert from 'react-bootstrap/Alert'
+import { useState } from 'react';
 
 export default function Home() {
+    const [showBanner, setShowBanner] = useState(true);
     const envData = addHealth({
         Trunk: { url: '/trunk', env: Environments.TRUNK },
         Release: { url: '/release', env: Environments.RELEASE },
@@ -47,11 +50,17 @@ export default function Home() {
     })
   return (
     <div className="container">
+      {showBanner && <Alert variant="warning" onClose={() => setShowBanner(false)} dismissible>
+         <Alert.Heading>Browser And Environment Requirements </Alert.Heading>
+         <p>
+           Please make sure to use <b>Firefox</b> as your browser, sign in to your <b>Redfin account</b>, and
+           use <b>chrome extension</b> if you want to check statuses for release and new schema.
+         </p>
+       </Alert>}
       <Head>
         <title>isItDown</title>
         <link rel="icon" href="/favicon.ico" />
       </Head>
-
       <main>
         <h1 className="title">
           Status
